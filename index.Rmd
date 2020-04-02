@@ -1,0 +1,19 @@
+--- 
+title: "stayCALM: Project Overview"
+author: "Zachary M. Smith"
+date: "`r Sys.Date()`"
+site: "bookdown::bookdown_site"
+output: bookdown::gitbook
+theme: readable
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+---
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(fig.width = 8)
+```
+
+# Introduction
+
+The New York State Department of Environmental Conservation's (NYSDEC's) Bureau of Water Assessment and Management (BWAM) has made it a top priority to automate waterbody assessments as dictated by NYSDEC's Consolidated Assessment and Listing Methodology (CALM). For this process to work efficiently, BWAM will need to 1) establish authoritative data repositories and 2) establish a standardized process for applying the assessment process outlined in the CALM. 
