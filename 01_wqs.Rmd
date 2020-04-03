@@ -16,9 +16,9 @@ theme: readable
 
 ## Waterbody Class Hierarchy
 
-Fresh and saline surface water classes generally conform to a descending alphabetical hierarchy (Figure \@ref(fig:wqs-general)). Class D represents the most upstream class of the fresh surface waters, while class AA-Special represents the most downstream class. Similarly, class SD represents the most upstream class of the saline surface waters, while class SA represents the most downstream class. The saline surface water class I's are only associated with secondary contact recreation and fishing, and therefore are treated independently of the other saline surface water classes-- the relationship between waterbody classes and designated uses is discussed further in the [Designated Uses] section. 
+Fresh and saline surface water classes generally conform to a descending alphabetical hierarchy (Figure \@ref(fig:wqs-general)). Class D represents the most upstream class of the fresh surface waters, while class AA-Special represents the most downstream class. Similarly, class SD represents the most upstream class of the saline surface waters, while class SA represents the most downstream class. The saline surface water class I is only associated with secondary contact recreation and fishing, and therefore are treated independently of the other saline surface water classes-- the relationship between waterbody classes and designated uses is discussed further in the [Designated Uses] section. 
 
-```{r wqs-general, fig.align='center', out.width = "800px", echo=FALSE, fig.cap=" The general waterbody class hierarchy for which New York State Deparment of Environmental Conservation. Water quality standards are inherited in descending alphabetical order."}
+```{r wqs-general, fig.align='center', out.width = "700px", echo=FALSE, fig.cap=" The general waterbody class hierarchy for which New York State Deparment of Environmental Conservation. Water quality standards are inherited in descending alphabetical order."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_general.png',
                         dpi = 300)
 ```
@@ -31,8 +31,8 @@ The following WQS do not follow the logic depicted in Figure \@ref(fig:wqs-gener
 
 ####  Aquatic (Acute)
 
-Aquatic (Acute) designates at type of WQS. The class hierarchy associated with Aquatic (Acute) WQSs are treated inconsistently by NYSDEC. In some instances the class hierarchy follows the rules depicted in Figure \@ref(fig:wqs-general), but there are multiple instances where Aquatic (Acute) WQSs are only applicable to fresh and saline surface water classes D and SD, respectively (Figure \@ref(fig:wqs-aa)).
-```{r wqs-aa, fig.align='center', echo=FALSE, out.width = "500px", fig.cap="Many water quality standards of type, Aquatic (Acute), are only applicable for fresh and saline surface waters D and SD, respectively. Therefore, Aquatic (Acute) standards are not always inherited by the classes downstream of D and SD in their respective hierarchies. There is no standaridized logic dictating when Aquatic (Acute) water quality standards are or are not inherited by their descendants."}
+Aquatic (Acute) designates a type of WQS. The class hierarchy associated with Aquatic (Acute) WQSs are treated inconsistently by NYSDEC. In some instances the class hierarchy follows the rules depicted in Figure \@ref(fig:wqs-general), but there are multiple instances where Aquatic (Acute) WQSs are only applicable to fresh and saline surface water classes D and SD, respectively (Figure \@ref(fig:wqs-aa)).
+```{r wqs-aa, fig.align='center', echo=FALSE, out.width = "400px", fig.cap="Many water quality standards of type Aquatic (Acute) are only applicable for fresh and saline surface waters D and SD, respectively. Therefore, Aquatic (Acute) standards are not always inherited by the classes downstream of D and SD in their respective hierarchies. There is no standaridized logic dictating when Aquatic (Acute) water quality standards are or are not inherited by their descendants."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_aquatic_acute.png',
                         dpi = 300)
 ```
@@ -41,16 +41,16 @@ knitr::include_graphics('images/wqs_logic/wqs-logic_aquatic_acute.png',
 
 Fresh surface water classes C, B, A, A-Special, AA, and AA-Special have variants designating Trout (T) and Trout Spawning (TS) waterbodies (e.g., C(T) and C(TS)). For the majority of parameters, these variants have the same WQS as the non-T/TS waterbody classes (Figure \@ref(fig:wqs-general)). Dissolved oxygen and ammonia as NH~3~ WQS differ between non-T/TS, T, and TS waterbody class variants (Figure \@ref(fig:wqs-do-ammonia)); non-T/TS variants have the least stringent standards, while TS variants have the most stringent standards.
 
-```{r wqs-do-ammonia, fig.align='center', echo=FALSE, out.width = "800px", fig.cap="New York State's fresh surface water dissolved oxygen and ammonia as NH~3~ water quality standards for class C, B, A, A-Special, AA, and AA-Special differ amoung Trout (T) and Trout Spawning (TS) class variants."}
+```{r wqs-do-ammonia, fig.align='center', echo=FALSE, out.width = "600px", fig.cap="New York State's fresh surface water dissolved oxygen and ammonia as NH~3~ water quality standards for class C, B, A, A-Special, AA, and AA-Special differ amoung Trout (T) and Trout Spawning (TS) class variants."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_do-ammonia.png',
                         dpi = 300)
 ```
 
 #### Dissolved Solids
 
-The WQS for dissolved solids in fresh surface waters is defined as "Shall be kept as low as practicable to maintain the best usage of waters but in no case shall it exceed 500 mg/L." for classes C, B, A, AA, and AA-Special (Figure \@ref(fig:wqs-dissolved-solids)). The standard for class A-Special is "Shall not exceed 200 mg/L." This deviates from the general logic depicted in Figure \@ref(fig:wqs-general) becuase the A-Special class is more stringent than it's downstream classes, AA and AA-Special.
+The WQS for dissolved solids in fresh surface waters is defined as "Shall be kept as low as practicable to maintain the best usage of waters but in no case shall it exceed 500 mg/L" for classes C, B, A, AA, and AA-Special (Figure \@ref(fig:wqs-dissolved-solids)). The standard for class A-Special is "Shall not exceed 200 mg/L." This deviates from the general logic depicted in Figure \@ref(fig:wqs-general) becuase the A-Special class is more stringent than it's downstream classes, AA and AA-Special.
 
-```{r wqs-dissolved-solids, fig.align='center', out.width = "600px", echo=FALSE, fig.cap="New York State's fresh surface water dissolved solids water quality standards are more stringent for class A-Special than the other waterbody classes. This deviates from the general logic that the downstream classes (i.e., AA and AA-Special) will inherit the standards of class A-Special."}
+```{r wqs-dissolved-solids, fig.align='center', out.width = "400px", echo=FALSE, fig.cap="New York State's fresh surface water dissolved solids water quality standards are more stringent for class A-Special than the other waterbody classes. This deviates from the general logic that the downstream classes (i.e., AA and AA-Special) will inherit the standards of class A-Special."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_dissolved-solids.png',
                         dpi = 300)
 ```
@@ -58,13 +58,13 @@ knitr::include_graphics('images/wqs_logic/wqs-logic_dissolved-solids.png',
 #### Total and Fecal Coliforms
 
 The WQSs for total and fecal coliforms in fresh surface waters follow the logic dictated in Figure \@ref(fig:wqs-general), except there is no total coliform standard appicable to class AA-Special (Figure \@ref(fig:wqs-total-coliforms)) and there are no fecal coliform standards appicable to class AA or AA-Special (Figure \@ref(fig:wqs-fecal-coliforms)).
-```{r wqs-total-coliforms, fig.align='center', out.width = "600px", echo=FALSE, fig.cap="There is no total coliform standard defined for fresh water surface class AA-Special in New York State."}
+```{r wqs-total-coliforms, fig.align='center', out.width = "400px", echo=FALSE, fig.cap="There is no total coliform standard defined for fresh water surface class AA-Special in New York State."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_total-coliforms.png',
                         dpi = 300)
 ```
 
 
-```{r wqs-fecal-coliforms, fig.align='center', out.width = "600px", echo=FALSE, fig.cap="There are no fecal coliform standards defined for fresh water surface classes AA or AA-Special in New York State."}
+```{r wqs-fecal-coliforms, fig.align='center', out.width = "400px", echo=FALSE, fig.cap="There are no fecal coliform standards defined for fresh water surface classes AA or AA-Special in New York State."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_fecal-coliforms.png',
                         dpi = 300)
 ```
