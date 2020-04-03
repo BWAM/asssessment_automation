@@ -14,6 +14,21 @@ link-citations: yes
 knitr::opts_chunk$set(fig.width = 8)
 ```
 
+```{r standard-dt, echo=FALSE}
+standard_dt <- function(x) {
+    DT::datatable(x, 
+    options = list(
+      columnDefs = list(list(
+        className = 'dt-center'
+      )),
+      scrollY = 300,
+      scroller = TRUE,
+      scrollX = TRUE
+    )
+  )
+}
+```
+
 # Introduction
 
 The New York State Department of Environmental Conservation's (NYSDEC's) Bureau of Water Assessment and Management (BWAM) has made it a top priority to automate waterbody assessments as dictated by NYSDEC's Consolidated Assessment and Listing Methodology (CALM). For this process to work efficiently, BWAM will need to 1) establish authoritative data repositories and 2) establish a standardized process for applying the assessment process outlined in the CALM. 
