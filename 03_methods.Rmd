@@ -40,8 +40,7 @@ data(nysdec_wqs)
     + D > C > B > A > A-Special > AA > AA-Special
     + D > C > C(T) > C(TS) > B > B(T) > B(TS) > A > A(T) > A(TS) > A-Special  > A-Special(T) > A-Special(TS) > AA > AA(T) > AA(TS) > AA-Special > AA-Special(T) > AA-Special(TS)
 - __saline__ - saline surface waters
-    + SD > SC > SB > SA
-    + **saline_i** - Class-I is independent of all other saline surface water classes.
+    + SD > I > SC > SB > SA
 ```{r}
 wqs.df <- purrr::map_df(c("fresh", "saline", "saline_i"), function(type.i) {
   class.vec <- switch(type.i,
@@ -49,8 +48,8 @@ wqs.df <- purrr::map_df(c("fresh", "saline", "saline_i"), function(type.i) {
                                                                      "A", "A-Special",
                                                                      "AA", "AA-Special"),
                                                       .variant_vec = c("", "(T)", "(TS)"))),
-                      "saline" = c("SD", "SC", "SB", "SA"),
-                      "saline_i" = "I")
+                      "saline" = c("SD", "I", "SC", "SB", "SA"))
+                      #"saline_i" = "I")
   
   wqs_sub.df <- nysdec_wqs[nysdec_wqs$class_type == type.i, ]
   
