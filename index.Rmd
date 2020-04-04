@@ -29,6 +29,6 @@ standard_dt <- function(x) {
 }
 ```
 
-# Introduction
+# Abstract
 
-The New York State Department of Environmental Conservation's (NYSDEC's) Bureau of Water Assessment and Management (BWAM) has made it a top priority to automate waterbody assessments as dictated by NYSDEC's Consolidated Assessment and Listing Methodology (CALM). For this process to work efficiently, BWAM will need to 1) establish authoritative data repositories and 2) establish a standardized process for applying the assessment process outlined in the CALM. 
+The New York State Department of Environmental Conservation's (NYSDEC's) Bureau of Water Assessment and Management (BWAM) has made it a top priority to automate waterbody assessments as dictated by NYSDEC's Consolidated Assessment and Listing Methodology (CALM). For this process to work efficiently, BWAM will need to 1) establish authoritative data repositories and 2) establish a standardized process for applying the assessment process outlined in the CALM. This document details the process for standardizing the assessment logic dictated in the CALM using R statistical software and provides recommendations on the structure and content of data that BWAM should store in their authoritative data repositories.

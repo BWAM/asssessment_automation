@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Automation of Assessment: Project Overview</title>
-  <meta name="description" content="Automation of Assessment: Project Overview" />
+  <title>4 stayCALM | Automation of Assessment: Project Overview</title>
+  <meta name="description" content="4 stayCALM | Automation of Assessment: Project Overview" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Automation of Assessment: Project Overview" />
+  <meta property="og:title" content="4 stayCALM | Automation of Assessment: Project Overview" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Automation of Assessment: Project Overview" />
+  <meta name="twitter:title" content="4 stayCALM | Automation of Assessment: Project Overview" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="calm.html"/>
+<link rel="prev" href="water-quality-standards-and-guidance-values.html"/>
+<link rel="next" href="methods.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -180,23 +180,145 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Automation of Assessment: Project Overview</h1>
-<p class="author"><em>Zachary M. Smith</em></p>
-<p class="date"><em>2020-04-04</em></p>
+<div id="staycalm" class="section level1">
+<h1><span class="header-section-number">4</span> stayCALM</h1>
+<p>The R package, <strong>stayCALM</strong> (Standardized Tool for Applying Your Consolidated Assessment and Listing Methodology), provides a robust framework for automating assessments as outlined in the NYSDEC CALM. The intent is to provide a tool that enforces a strict standardized process, but is flexible enough to quickly and accurately accommodate changes to the CALM.</p>
+<div id="r-programming-language" class="section level2">
+<h2><span class="header-section-number">4.1</span> R Programming Language</h2>
+<p>The programming language, R, was selected because it provides an excellent environment for developing and executing standardized computations and processes.</p>
 </div>
-<div id="abstract" class="section level1">
-<h1><span class="header-section-number">1</span> Abstract</h1>
-<p>The New York State Department of Environmental Conservation’s (NYSDEC’s) Bureau of Water Assessment and Management (BWAM) has made it a top priority to automate waterbody assessments as dictated by NYSDEC’s Consolidated Assessment and Listing Methodology (CALM). For this process to work efficiently, BWAM will need to 1) establish authoritative data repositories and 2) establish a standardized process for applying the assessment process outlined in the CALM. This document details the process for standardizing the assessment logic dictated in the CALM using R statistical software and provides recommendations on the structure and content of data that BWAM should store in their authoritative data repositories.</p>
+<div id="process-overveiw" class="section level2">
+<h2><span class="header-section-number">4.2</span> Process Overveiw</h2>
+<p>There are two methods for applying the logic defined in the CALM– both of which could be supported by the functions provided in <strong>stayCALM</strong>:</p>
+<ol style="list-style-type: decimal">
+<li>The CALM process could be strictly followed by dividing the data at each node of the decision tree depicted in Figure 1 until each data point has been appropriately assessed. The various subsets created during this process would be appended together to create the final assessment product.
+<ul>
+<li><strong>Pros:</strong> No unnecessary calculations are made.</li>
+<li><strong>Cons:</strong> The process creates many disperate datasets, which…
+<ul>
+<li>makes it difficult comprehend how the data is being handled at each step;</li>
+<li>leaves room for the introduction of errors, such as accidentally dropping a subset of data or applying the wrong process to a subset of data;</li>
+<li>and future modifications to the CALM may require an extensive re-structuring of flow through the decision tree (Figure 1).</li>
+</ul></li>
+</ul></li>
+<li>All intermittent steps from the CALM process could be applied globally to the data set, and subsequently the assessment classifications can be assigned.
+<ul>
+<li><strong>Pros:</strong> The process does not divide the data into multiple subsets, which…
+<ul>
+<li>makes it simple to follow the process;</li>
+<li>reduces the chance of introducting errors;</li>
+<li>and will require minimal reconfiguration if the CALM process is updated in the future.</li>
+</ul></li>
+<li><strong>Cons:</strong> Potentially slower than other methodologies because unnecessary calculations are made.
+<ul>
+<li>The time added by these unnecessary calculations is likely to be neglible for the data set sizes assessed by NYSDEC. Additionally, the potential time lag would likely be on the order of seconds or minutes; this is far faster than a manual effort to perform assessments for a large amount of data, which would likely be on the order of days, weeks, or months.</li>
+</ul></li>
+</ul></li>
+</ol>
+</div>
+<div id="expected-data-structure" class="section level2">
+<h2><span class="header-section-number">4.3</span> Expected Data Structure</h2>
+<p>Data should be stored in a long-format where each row represents a single parameter value collected during a sampling event.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">stayCALM<span class="op">::</span>stream</a></code></pre></div>
+</div>
+<div id="data-preprocessing" class="section level2">
+<h2><span class="header-section-number">4.4</span> Data Preprocessing</h2>
+<ul>
+<li>Data Preprocessing
+<ul>
+<li>Assessment Database
+<ul>
+<li>Water Quality Thresholds
+<ul>
+<li>tlkParam = a table that includes water quality standards associated with waterbody class and parameter.</li>
+<li>tlkParam_75p_long = a table that includes 75th percentile thresholds associated with waterbody class and parameter.</li>
+<li>These tables need to be expanded to include every combination of trout (T) and trout spawning (TS) designations.
+<ul>
+<li><strong>NEED:</strong> build a function to prepare T and TS designations.</li>
+<li><strong>NEED:</strong> to export these tables and add them to the Assessment Database.</li>
+</ul></li>
+</ul></li>
+<li>The following tables from the Assessment database need to be joined
+<ul>
+<li>tblWIPWL</li>
+<li>tblkCOUNTY (by = “COUNTY”)</li>
+<li>tlkDRAIN_BASIN (by = “SUBBASIN_CODE”)</li>
+<li>tlk305B (by = “TYPE”)</li>
+<li>tlkTYPE (by = “X305B_CODE”)</li>
+<li>tlkParam (as prepared above)</li>
+<li>tlkParam_75p_long (as prepared above)</li>
+<li><strong>Alter:</strong> change the order that these occur in the script. tlkParam tables should be prepared first, and then the other Assessment database tables should be imported, joined, and joined with the tlkParam tables.</li>
+</ul></li>
+</ul></li>
+<li>Chemistry Data
+<ul>
+<li><code>correction_param_prep()</code> = parameters used as correction factors (e.g., hardness, pH, and temperature) are extracted from the parameter-name and parameter-value columns and represented as a unique column. This prepares the data frame for the correction factors to be applied to the appropriate parameter values. The correction parameters, when available, will be joined with all parameters collected during the same sampling event, NOT just the parameters that require correction. This global join simplifies the preprocessing steps and reduces the chance of introducing errors.
+<ul>
+<li><strong>ISSUE:</strong> pH is creating duplicates</li>
+</ul></li>
+</ul></li>
+<li>Join the prepared Assessment tables with the prepared Chemistry tables
+<ul>
+<li><code>by = c("SEG_ID" = "SH_PWL_ID", "parameter" = "CHEMICAL_NAME")</code></li>
+</ul></li>
+<li><code>date_standard_cols()</code> = adds various date related columns to the data frame that will simplify the assessment process.
+<ul>
+<li><code>datetime</code></li>
+<li><code>date</code></li>
+<li><code>year</code></li>
+<li><code>month</code></li>
+</ul></li>
+<li><code>preprocess_validation()</code> = ensures that the data validation column only includes the expected character strings and filters out rows that represent “Not Reported”.
+<ul>
+<li><strong>Review:</strong> how does this handle NAs?</li>
+</ul></li>
+<li><code>assessment_id()</code> = uses <strong>dplyr</strong> <code>group_indicies()</code> to generate a unique assessment ID based on unique instances of the columns supplied to the ellipse argument (<code>...</code>).
+<ul>
+<li><code>assessment_id</code> the name of the column added to the data frame representing the unique assessment ID.</li>
+</ul></li>
+<li><code>assessment_period()</code> = allows for the specification of the assessment period by number of years from the current date. For example, the default value is 10-years (<code>n_years_ago = 10</code>), and therefore the sampling period would include all samples from 10-years from the present date to the present date.
+<ul>
+<li><code>asssess_period</code> the name of the column added to the data frame, which will specify “within_assessment_period” or “outside_assessment_period”. These designations will dictate how the data is assessed via the CALM.</li>
+</ul></li>
+<li><code>assessment_min_counts()</code> = allows for the specification of the minimum number of samples required per a designated group (e.g., <code>assessment_id</code>) to perform an assessment.
+<ul>
+<li><code>n_samples</code> = a column representing the total number of samples per designated group.</li>
+<li><code>min_n_samples</code> = a column containing logical values indicating if there are enough samples available to perform an assessment. These designations will dictate how the data is assessed via the CALM.</li>
+</ul></li>
+<li><code>assessment_min_years()</code> = allows for the specification of the minimum number of years required to perform an assessment. This is different from <code>assessment_period()</code>. <code>assessment_period()</code> designates the extent of the time period
+<ul>
+<li><code>within_assess_period</code> = a logical column indicating if the samples were collected within the designated sampling period (<code>TRUE</code>) or not (<code>FALSE</code>).</li>
+</ul></li>
+<li><code>assessment_min_req()</code> = wraps around <code>assessment_min_counts()</code> and <code>assessment_min_years()</code> to perform these calculations with a single call and provides a flag indicating if the minimum requirements from both functions were met.
+<ul>
+<li><code>min_req_met</code> = a column indicating if the minimum number of samples and minimum number of sampling years are met (<code>min_n_samples == TRUE &amp; min_n_years == TRUE</code>). The values in this column will represent logical values (<code>TRUE</code> or <code>FALSE</code>).</li>
+<li><strong>Questioning:</strong> should assessment period be included in this call and update the <code>min_req_met</code> column?
+<ul>
+<li>No, these should remain separate</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="current-status" class="section level2">
+<h2><span class="header-section-number">4.5</span> Current Status</h2>
+<ul>
+<li>To Do
+<ul>
+<li>Create a general function for assessing both WQS and &gt; 75% IQR of WQS</li>
+<li>Create a classification function that uses <code>case_when</code> to look at all prepped columns</li>
+</ul></li>
+</ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="calm.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="water-quality-standards-and-guidance-values.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

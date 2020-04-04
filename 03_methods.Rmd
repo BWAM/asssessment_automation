@@ -1,0 +1,179 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "4/4/2020"
+output: html_document
+---
+
+# Methods
+
+## stayCALM Package Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+```{r install-github, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("BWAM/stayCALM")
+```
+
+You must have `rtools` installed on your machine for the stayCALM to be built upon installation from GitHub. `rtools` is __NOT__ an R package. On Windows machines, `rtools` can be installed from the following CRAN repository: https://cran.r-project.org/bin/windows/Rtools/.
+
+
+## Prepare the R Environment
+
+Load the necessary R packages into the global environment, including the __stayCALM__ package.
+```{r load-packages, message=FALSE}
+library(tidyverse)
+library(stayCALM)
+```
+
+## Preprocess Data
+
+### Water Quality Standards
+
+Data was preprocessed to resemble the expected output from the athorotative databases that will become available as part of the Data Modernization effort [Data Modernization].
+```{r}
+data(nysdec_wqs)
+```
+
+- __fresh__ - fresh surface waters
+    + D > C > B > A > A-Special > AA > AA-Special
+    + D > C > C(T) > C(TS) > B > B(T) > B(TS) > A > A(T) > A(TS) > A-Special  > A-Special(T) > A-Special(TS) > AA > AA(T) > AA(TS) > AA-Special > AA-Special(T) > AA-Special(TS)
+- __saline__ - saline surface waters
+    + SD > SC > SB > SA
+    + **saline_i** - Class-I is independent of all other saline surface water classes.
+```{r}
+wqs.df <- purrr::map_df(c("fresh", "saline", "saline_i"), function(type.i) {
+  class.vec <- switch(type.i,
+                      "fresh" = c("D", class_variants(.class_vec = c("C", "B",
+                                                                     "A", "A-Special",
+                                                                     "AA", "AA-Special"),
+                                                      .variant_vec = c("", "(T)", "(TS)"))),
+                      "saline" = c("SD", "SC", "SB", "SA"),
+                      "saline_i" = "I")
+  
+  wqs_sub.df <- nysdec_wqs[nysdec_wqs$class_type == type.i, ]
+  
+  
+  final.df <- class_inheritance(.data = wqs_sub.df,
+                                parameter,
+                                .class_col = class,
+                                .levels_vec = class.vec) %>% 
+    dplyr::mutate(class = as.character(class))
+    
+})
+```
+
+```{r, echo=FALSE}
+standard_dt(wqs.df)
+```
+
+### WI/PWL
+
+Data was preprocessed to resemble the expected output from the athorotative databases that will become available as part of the Data Modernization effort [Data Modernization].
+```{r}
+data("wipwl.df")
+```
+
+```{r}
+wqs_wipwl.df <- wipwl.df %>%
+  select(seg_id, class, tmdl_id, mgmtstat) %>% 
+  distinct() %>%
+  left_join(wqs.df, by = "class")
+```
+
+### Stream Data
+
+Data was preprocessed to resemble the expected output from the athorotative databases that will become available as part of the Data Modernization effort [Data Modernization].
+```{r}
+data(stream_chem.df) 
+```
+
+
+```{r}
+chem.df <- stream_chem.df %>% 
+  rename_all(tolower) %>% 
+  rename(seg_id = sh_pwl_id,
+         parameter = chemical_name) %>% 
+  inner_join(wqs_wipwl.df, by = c("seg_id", "parameter"))
+```
+
+
+```{r}
+chem_final.df <- chem.df %>% 
+  mutate(result_numeric = if_else(is.na(result_numeric) & !is.na(validation_level),
+                                  reporting_detection_limit,
+                                  result_numeric)) %>% 
+    filter(!validation_level %in% "Not Reported",
+         !is.na(result_numeric))
+```
+
+## Assess
+
+Thresholds represented by `NA` will throw an error. The majority of the `NA`s in the threshold column now need to be calculated-- a task I have not standardized yet.
+```{r}
+chem_final.df <- chem_final.df %>%
+  filter(!is.na(threshold))
+```
+
+```{r}
+assessed.df <- chem_final.df %>%
+  # Drop this filter after additional prep steps have been added
+  filter(is.na(formula) & statistic %in% "none" & block %in% "single") %>% 
+  date_standard_cols(.date_col = sample_date) %>% 
+  assessment_id(seg_id,
+                lab_anl_method_name,
+                cas_rn,
+                parameter) %>%
+  mutate(
+    within_period = assessment_period(.df = .,
+                      .date_col = date,
+                    .n_years_ago = 10),
+    min_years_samples = all(assessment_min_years(.df = .,
+                                                .date_col = date,
+                                                .min_years = 2,
+                                                assessment_id),
+                           assessment_min_counts(.df = ., 
+                                                 .min_samples = 8,
+                                                 assessment_id)),
+    attaining_wqs = wqs_attaining(result_numeric,
+                                  direction,
+                                  threshold,
+                                  na.rm = TRUE),
+    attaining_75 = wqs_attaining(result_numeric,
+                                 direction,
+                                 threshold,
+                                 na.rm = TRUE),
+    min_violations_year = TRUE,
+    tmdl = !is.na(tmdl_id),
+    ltco_rest_plan = mgmtstat %in% "Strategy Implementation Scheduled or Underway",
+    pollutant = !is.na(poll_code)
+    )
+```
+
+
+
+```{r}
+test.df <- assessed.df %>% 
+  mutate(
+    assessment = case_when(
+      !within_period ~ "Manual Review Required: Manual Review Required: Manual Review Required",
+      !min_years_samples & attaining_wqs ~ "IR3: Impaired: Unconfirmed",
+      !min_years_samples & !attaining_wqs & attaining_75  ~ "IR3: Fully Supported: Unconfirmed",
+      !min_years_samples & !attaining_wqs & !attaining_75  ~ "IR3: Stressed: Unconfirmed",
+      min_years_samples & attaining_wqs & attaining_75  ~ "IR1: Fully Supported: Confirmed",
+      min_years_samples & attaining_wqs & !attaining_75  ~ "IR1: Stressed: Confirmed",
+      min_years_samples & !attaining_wqs & !min_violations_year  ~ "IR3: Impaired: Unconfirmed",
+      min_years_samples & !attaining_wqs & min_violations_year & tmdl  ~ "IR4a: Impaired: Confirmed",
+      min_years_samples & !attaining_wqs &
+          min_violations_year & !tmdl & ltco_rest_plan  ~ "IR4b: Impaired: Unconfirmed",
+      min_years_samples & !attaining_wqs &
+          min_violations_year & !tmdl & !ltco_rest_plan & pollutant  ~ "IR4c: Impaired: Confirmed",
+      min_years_samples & !attaining_wqs &
+          min_violations_year & !tmdl & !ltco_rest_plan & !pollutant  ~ "IR5: Impaired: Confirmed",
+      TRUE ~ "ERROR"
+    )
+  )
+
+# table(test.df$assessment)
+```

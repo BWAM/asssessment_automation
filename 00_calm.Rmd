@@ -7,8 +7,6 @@ output: html_document
 
 # CALM
 
-## Overview
-
 The NYSDEC maintains a CALM that describes the processes and procedures used to assess the quality of New York’s surface waters and determine the attainment status in each waterbody consistent with applicable water quality standards and guidance values. The following dichotomous key and Figure \@ref(fig:calm-tree) provide two ways of simplifying the assessment process outlined in the CALM. The assessments are used by New York state for management purposes and ultimately reported to the United State Environmental Protection Agency (USEPA) in the form of a 303d list.
 
 - Dichotomous Key
