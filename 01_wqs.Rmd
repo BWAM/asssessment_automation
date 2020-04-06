@@ -12,50 +12,99 @@ theme: readable
 
 # Water Quality Standards and Guidance Values
 
-NYS's water quality standards (WQS) are derived in [Title 6 NYCRR, Part 702](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I06b83300b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) and defined in [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)). 
-
-NYS's ambient water quality guidance values
-
+NYS's water quality standards (WQSs) and guidance values (GVs) are defined in [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)), and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf), respectively. WQSs and GVs are assigned to fresh and saline surface water classes, and ultimately determine if a waterbody is attaining its designated uses (i.e., fishing, secondary contact recreation, primary contact recreation, source water supply, and shellfishing). In general, the relationship between waterbody classes is hierarchical.
 
 ## Waterbody Class Hierarchy
 
-Fresh and saline surface water classes generally conform to a descending alphabetical hierarchy (Figure \@ref(fig:wqs-general)). Class D represents the most upstream class of the fresh surface waters, while class AA-Special represents the most downstream class. Similarly, class SD represents the most upstream class of the saline surface waters, while class SA represents the most downstream class.
+Fresh and saline surface water classes generally conform to a descending alphabetical hierarchy (Figure \@ref(fig:wqs-general)). Class D represents the most upstream class of the fresh surface waters, while class AA-Special represents the most downstream class (Figure \@ref(fig:wqs-general)A). Similarly, class SD represents the most upstream class of the saline surface waters, while class SA represents the most downstream class (Figure \@ref(fig:wqs-general)B). Class I, within saline surface waters, is downstream of class SC and upstream of class SB; therefore, class I creates a discrepancy in the descending alphabetical hierarchy of saline surface water classes.
 
-```{r wqs-general, fig.align='center', out.width = "700px", echo=FALSE, fig.cap="The General Logic box at the head of the figure depicts the standard waterbody class hierarchy for which New York State Deparment of Environmental Conservation's water quality standards are inherited in descending alphabetical order. The subsequent boxes show the class hierarchy specific to waterbody designated uses. Water quality standard types included in the boxes reflect the assignments found in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3. Water Classes and Type."}
-knitr::include_graphics('images/wqs_logic/wqs-logic_general-uses.png',
+```{r wqs-general, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="The standard waterbody class hierarchy of fresh (A) and saline surface waters (B) for which New York State's water quality standards are inherited in descending alphabetical order. The navy-blue boxes represent the waterbody classes and the red arrows indicate the direction that water quality standards are inherited through the class hierarchy. The gray boxes surrounding the depiction of class hierarchy indicate which designated uses are applicable for a given class."}
+knitr::include_graphics('images/wqs_logic/wqs-logic_general-uses_v2.png',
                         dpi = 300)
 ```
 
-WQS assigned to upstream classes are inherited by all downstream classes. The most upstream class associated with a WQS will be referred to as the "root" class for a given standard. For example, fishing use WQSs have a root of D and SD classes, and therefore will be applicable to all downstream fresh surface water classes (i.e., C, B, A, A-Special, AA, AA-Special, and their associated Trout (T) and Trout Spawning (TS) variants) and saline surface water classes (i.e., I, SC, SB, and SA), respectively. D and SD represent the most upstream classes in fresh and saline surface waters, respectively, and therefore influence all other classes. However, D and SD classes do not always represent the root class for a given WQS. The root class for source water supply WQSs is A, and therefore the hierarchy only extends in sequential order from A, A-Special, AA, and AA-Special. Inheritance through the hierarchy does not necessarily imply that all class have the same WQSs; in many instances, the WQSs become increasingly more restrictive moving downstream through the hierarchy. WQSs will not become less restrictive moving downstream through the hierarchy ([Dissolved Solids] and [Total and Fecal Coliforms] represent discrepancies to this rule). Although most WQSs are inherited according to the logic in Figure \@ref(fig:wqs-general), there are multiple discrepancies.
+WQSs and GVs assigned to upstream classes are inherited by all downstream classes. The most upstream class associated with a WQS or GV will be referred to as the "root" class for a given standard. For example, fishing use WQSs and GVs have a root of D and SD classes, and therefore will be applicable to all downstream fresh surface water classes (i.e., C, B, A, A-Special, AA, AA-Special, and their associated Trout (T) and Trout Spawning (TS) variants) and saline surface water classes (i.e., I, SC, SB, and SA), respectively. D and SD represent the most upstream classes in fresh and saline surface waters, respectively, and therefore influence all other classes. However, D and SD classes do not always represent the root class for a given WQS or GV. The root class for source water supply WQSs and GVs is A, and therefore the hierarchy only extends in sequential order from A to AA-Special. Inheritance through the hierarchy does not necessarily imply that all class have the same WQSs or GVs; in many instances, the WQSs or GVs become increasingly more restrictive moving downstream through the hierarchy. WQSs and GVs will not become less restrictive moving downstream through the hierarchy ([Dissolved Solids] and [Total and Fecal Coliforms] represent discrepancies to this rule). Although most WQSs and GVs are inherited according to the logic in Figure \@ref(fig:wqs-general), there are multiple discrepancies.
 
 ### Discrepancies
 
-The following WQS do not follow the logic depicted in Figure \@ref(fig:wqs-general). It is important to specifically document all of these instances because these instances will require special attention within the standardized assessment automation process.
+The following WQS do not follow the logic depicted in Figure \@ref(fig:wqs-general). It is important to specifically document all discrepancies because these instances will require special attention within the standardized assessment automation process.
 
 #### Class I
 
 In [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3. Water Classes and Type, WQSs for the saline surface water class I should be defined for types Human Consumption of Fish (H(FC)), Aquatic Chronic (A(C)), Aquatic Acute (A(A)), Wildlife Protection (W), and Aesthetic (E). However, in Table 1 of [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) and in [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Document/I4ed90418cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1), class I water's are frequently and inconsistently excluded from the above mentioned types; this creates a class hierarchy that follows the logic in Figure \@ref(fig:wqs-class-i) rather than the logic in Figure \@ref(fig:wqs-general).
-```{r wqs-class-i, fig.align='center', out.width = "700px", echo=FALSE, fig.cap="In some instances New York State saline surface water standards exclude class I from the hierarchy of class."}
+```{r wqs-class-i, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="In some instances New York State saline surface water standards exclude class I from the hierarchy of class."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_class-i.png',
                         dpi = 300)
 ```
 
+The following parameters are not applicable to class I waters, which deviates from the logic presented in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3:
 
-No I: Aldrin (309-00-2), Aldrin and Dieldrin (309-00-2; 60-57-1), Arsenic (NA), Hexavalent Chromium (NA), Endosulfan (115-29-7), Endrin (72-20-8), Hexachlorocyclopentadiene (77-47-4), Trichlorobenzenes (87-61-6, 120-82-1, 108-70-3, 12002-48-1)
+1. Aldrin (309-00-2)
+2. Aldrin and Dieldrin (309-00-2; 60-57-1)
+3. Arsenic (NA)
+4. Hexavalent Chromium (NA)
+5. Endosulfan (115-29-7)
+6. Endrin (72-20-8)
+7. Hexachlorocyclopentadiene (77-47-4)
+8. Trichlorobenzenes (87-61-6, 120-82-1, 108-70-3, 12002-48-1)
+9. Azinphosmethyl (86-50-0)
+10. Demeton (8065-48-3, 298-03-3, 126-75-0)
+11. Hydrogen sulfide (7783-06-4)
+12. Malathion (121-75-5)
+13. Methoxychlor (72-43-5)
+14. Mirex (2385-85-5)
+15. Toxaphene (8001-35-2; A(C))
 
-DO: different standard for I "Shall not be less than 4.0 mg/L at any time."; "SD:SA = Acute: Shall not be less than 3.0 mg/L at any time."
+The following parameters are applicable to class I waters, which is consistent with the logic presented in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3:
 
-Root C: Azinphosmethyl (86-50-0), Demeton (8065-48-3, 298-03-3, 126-75-0), Hydrogen sulfide (7783-06-4), Malathion (121-75-5), Methoxychlor (72-43-5),
-Mirex (2385-85-5), Toxaphene (8001-35-2; A(C))
+1. Ammonia and Ammonium (7664-41-7)
+2. Benzene (71-43-2)
+3. Boron (NA)
+4. Cadmium (NA)
+5. Chlordane (57-74-9)
+6. dibenzofurans (NA)
+7. Total Residual Chlorine (NA)
+8. Chlorobenzene (108-90-7)
+9. Copper (NA)
+10. Cyanide (NA)
+11. p,p′-DDD (72-54-8)
+12. p,p′-DDE (72-55-9)
+13. p,p′-DDT (50-29-3)
+14. Dieldrin (60-57-1)
+15. 2,4-Dimethylphenol (105-67-9)
+16. 2,4-Dinitrophenol (51-28-5)
+17. Heptachlor (76-44-8)
+18. Heptachlor expoxide (1024-57-3)
+19. Hexachlorobenzene (118-74-1)
+20. Hexachlorobutadiene (87-68-3)
+21. alpha-Hexachlorocyclohexane (319-84-6)
+22. beta-Hexachlorocyclohexane (319-85-7)
+23. delta-Hexachlorocyclohexane (319-86-8)
+24. epsilon-Hexachlorocyclohexane (6108-10-7)
+25. gamma-Hexachlorocyclohexane (58-89-9)
+26. Hexachloroethane (67-72-1)
+27. Lead (NA)
+28. Mercury (NA)
+29. Methylene chloride (75-09-2)
+30. Nickel (NA)
+31. Octachlorostyrene (29082-74-4)
+32. Polychlorinated biphenyls (NA)
+33. Toluene (108-88-3)
+34. Toxaphene (8001-35-2)
+35. Trichloroethene (79-01-6)
+36. Zinc (NA)
+37. pH
+38. total coliforms
+39. fecal coliforms
 
-Yes I: Ammonia and Ammonium (7664-41-7), Benzene (71-43-2), Boron (NA), Cadmium (NA), Chlordane (57-74-9), dibenzofurans (NA), Total Residual Chlorine (NA), Chlorobenzene (108-90-7), Copper (NA), Cyanide (NA), p,p′-DDD (72-54-8), p,p′-DDE (72-55-9), p,p′-DDT (50-29-3), Dieldrin (60-57-1), 2,4-Dimethylphenol (105-67-9), 2,4-Dinitrophenol (51-28-5), Heptachlor (76-44-8), Heptachlor expoxide (1024-57-3), Hexachlorobenzene (118-74-1), Hexachlorobutadiene (87-68-3), alpha-Hexachlorocyclohexane (319-84-6), beta-Hexachlorocyclohexane (319-85-7), delta-Hexachlorocyclohexane (319-86-8), epsilon-Hexachlorocyclohexane (6108-10-7),  gamma-Hexachlorocyclohexane (58-89-9), Hexachloroethane (67-72-1), Lead (NA), Mercury (NA), Methylene chloride (75-09-2), Nickel (NA), Octachlorostyrene (29082-74-4), Polychlorinated biphenyls (NA), Toluene (108-88-3), Toxaphene (8001-35-2), Trichloroethene (79-01-6), Zinc (NA), pH, total coliforms, fecal coliforms.
 
+Additionally, the class I WQS for dissolved oxygen is "Shall not be less than 4.0 mg/L at any time", while the acute WQS for classes SD, SC, SB, and SA is "Shall not be less than 3.0 mg/L at any time." This deviates from the general logic presented in (Figure \@ref(fig:wqs-general)B), which places class I in between classes SC and SB in the saline surface water hierarchy.
 
 ####  Aquatic (Acute)
 
 Aquatic (Acute) designates a type of WQS. The class hierarchy associated with Aquatic (Acute) WQSs are treated inconsistently by NYSDEC. In many instances, the class hierarchy follows the rules depicted in Figure \@ref(fig:wqs-general), but there are multiple instances where Aquatic (Acute) WQSs are only applicable to fresh and saline surface water classes D and SD, respectively (Figure \@ref(fig:wqs-aa)).
 
-```{r wqs-aa, fig.align='center', echo=FALSE, out.width = "400px", fig.cap="Many water quality standards of type Aquatic (Acute) are only applicable for fresh and saline surface waters D and SD, respectively. Therefore, Aquatic (Acute) standards are not always inherited by the classes downstream of D and SD in their respective hierarchies. There is no standaridized logic dictating when Aquatic (Acute) water quality standards are or are not inherited by their descendants."}
+```{r wqs-aa, fig.align='center', echo=FALSE, out.width = "400px", fig.cap="Many water quality standards of type Aquatic (Acute) are only applicable for fresh and saline surface waters D and SD, respectively. Therefore, Aquatic (Acute) standards are not always inherited by the classes downstream of D and SD in their respective hierarchies. There is no standardized logic dictating when Aquatic (Acute) water quality standards are or are not inherited by their descendants."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_aquatic_acute.png',
                         dpi = 300)
 ```
@@ -79,14 +128,14 @@ file.path("C:",
 
 Fresh surface water classes C, B, A, A-Special, AA, and AA-Special have variants designating Trout (T) and Trout Spawning (TS) waterbodies (e.g., C(T) and C(TS)). For the majority of parameters, these variants have the same WQS as the non-T/TS waterbody classes (Figure \@ref(fig:wqs-general)). Dissolved oxygen and ammonia as NH~3~ WQS differ between non-T/TS, T, and TS waterbody class variants (Figure \@ref(fig:wqs-do-ammonia)); non-T/TS variants have the least stringent standards, while TS variants have the most stringent standards.
 
-```{r wqs-do-ammonia, fig.align='center', echo=FALSE, out.width = "600px", fig.cap="New York State's fresh surface water dissolved oxygen and ammonia as NH~3~ water quality standards for class C, B, A, A-Special, AA, and AA-Special differ amoung Trout (T) and Trout Spawning (TS) class variants."}
+```{r wqs-do-ammonia, fig.align='center', echo=FALSE, out.width = "600px", fig.cap="New York State's fresh surface water dissolved oxygen and ammonia as NH~3~ water quality standards for class C, B, A, A-Special, AA, and AA-Special differ among Trout (T) and Trout Spawning (TS) class variants."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_do-ammonia.png',
                         dpi = 300)
 ```
 
 #### Dissolved Solids
 
-The WQS for dissolved solids in fresh surface waters is defined as "Shall be kept as low as practicable to maintain the best usage of waters but in no case shall it exceed 500 mg/L" for classes C, B, A, AA, and AA-Special (Figure \@ref(fig:wqs-dissolved-solids)). The standard for class A-Special is "Shall not exceed 200 mg/L." This deviates from the general logic depicted in Figure \@ref(fig:wqs-general) because the A-Special class is more stringent than it's downstream classes, AA and AA-Special.
+The WQS for dissolved solids in fresh surface waters is defined as "Shall be kept as low as practicable to maintain the best usage of waters but in no case shall it exceed 500 mg/L" for classes C, B, A, AA, and AA-Special (Figure \@ref(fig:wqs-dissolved-solids)). The standard for class A-Special is "Shall not exceed 200 mg/L." This deviates from the general logic depicted in Figure \@ref(fig:wqs-general) because the A-Special class is more stringent than its downstream classes, AA and AA-Special.
 
 ```{r wqs-dissolved-solids, fig.align='center', out.width = "400px", echo=FALSE, fig.cap="New York State's fresh surface water dissolved solids water quality standards are more stringent for class A-Special than the other waterbody classes. This deviates from the general logic that the downstream classes (i.e., AA and AA-Special) will inherit the standards of class A-Special."}
 knitr::include_graphics('images/wqs_logic/wqs-logic_dissolved-solids.png',
