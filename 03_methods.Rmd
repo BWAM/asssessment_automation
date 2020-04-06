@@ -146,7 +146,7 @@ assessed.df <- chem_final.df %>%
     min_violations_year = TRUE,
     tmdl = !is.na(tmdl_id),
     ltco_rest_plan = mgmtstat %in% "Strategy Implementation Scheduled or Underway",
-    pollutant = !is.na(poll_code)
+    pollutant = TRUE 
     )
 ```
 
