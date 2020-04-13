@@ -16,96 +16,166 @@ NYS's water quality standards (WQSs) and guidance values (GVs) are defined in [T
 
 ## Waterbody Class Hierarchy
 
-Fresh and saline surface water classes generally conform to a descending alphabetical hierarchy (Figure \@ref(fig:wqs-general)). Class D represents the most upstream class of the fresh surface waters, while class AA-Special represents the most downstream class (Figure \@ref(fig:wqs-general)A). Similarly, class SD represents the most upstream class of the saline surface waters, while class SA represents the most downstream class (Figure \@ref(fig:wqs-general)B). Class I, within saline surface waters, is downstream of class SC and upstream of class SB; therefore, class I creates a discrepancy in the descending alphabetical hierarchy of saline surface water classes.
+Fresh and saline surface water classes generally conform to a descending alphabetical hierarchy (Figure \@ref(fig:wqs-general)). Class D represents the most upstream class of the fresh surface waters, while the various A-classes represent the most downstream classes (Figure \@ref(fig:wqs-general)A). The A-class represent different types of waterbodies associated with drinking water (see [Title 6 NYCRR, Part 701](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I06849fe0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default))). Similar to the fresh surface water classes, class SD represents the most upstream class of the saline surface waters, while class SA represents the most downstream class (Figure \@ref(fig:wqs-general)B). Class I, within saline surface waters, is downstream of class SC and upstream of class SB; therefore, class I creates a discrepancy in the descending alphabetical hierarchy of saline surface water classes. 
 
-```{r wqs-general, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="The standard waterbody class hierarchy of fresh (A) and saline surface waters (B) for which New York State's water quality standards are inherited in descending alphabetical order. The navy-blue boxes represent the waterbody classes and the red arrows indicate the direction that water quality standards are inherited through the class hierarchy. The gray boxes surrounding the depiction of class hierarchy indicate which designated uses are applicable for a given class."}
-knitr::include_graphics('images/wqs_logic/wqs-logic_general-uses_v2.png',
+```{r wqs-general, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="The standard waterbody class hierarchy of fresh (A) and saline surface waters (B) for which New York State's water quality standards are in general inherited in descending alphabetical order. The white-boxes represent the waterbody classes and the arrows indicate the direction that water quality standards are inherited through the class hierarchy. * Fresh surface water classes that have non-trout, trout (T), and trout spawning (TS) variants."}
+knitr::include_graphics('images/wqs_logic/wqs-logic_general_v3.png',
                         dpi = 300)
 ```
 
-WQSs and GVs assigned to upstream classes are inherited by all downstream classes. The most upstream class associated with a WQS or GV will be referred to as the "root" class for a given standard. For example, fishing use WQSs and GVs have a root of D and SD classes, and therefore will be applicable to all downstream fresh surface water classes (i.e., C, B, A, A-Special, AA, AA-Special, and their associated Trout (T) and Trout Spawning (TS) variants) and saline surface water classes (i.e., I, SC, SB, and SA), respectively. D and SD represent the most upstream classes in fresh and saline surface waters, respectively, and therefore influence all other classes. However, D and SD classes do not always represent the root class for a given WQS or GV. The root class for source water supply WQSs and GVs is A, and therefore the hierarchy only extends in sequential order from A to AA-Special. Inheritance through the hierarchy does not necessarily imply that all class have the same WQSs or GVs; in many instances, the WQSs or GVs become increasingly more restrictive moving downstream through the hierarchy. WQSs and GVs will not become less restrictive moving downstream through the hierarchy ([Dissolved Solids] and [Total and Fecal Coliforms] represent discrepancies to this rule). Although most WQSs and GVs are inherited according to the logic in Figure \@ref(fig:wqs-general), there are multiple discrepancies.
+WQSs and GVs assigned to upstream classes are inherited by all downstream classes. The most upstream class associated with a WQS or GV will be referred to as the "root" class for a given standard. For example, fishing use WQSs and GVs have a root of D and SD classes, and therefore will be applicable to all downstream fresh surface water classes (i.e., C, B, A-classes, and their associated Trout (T) and Trout Spawning (TS) variants) and saline surface water classes (i.e., I, SC, SB, and SA), respectively. D and SD represent the most upstream classes in fresh and saline surface waters, respectively, and therefore influence all other classes. However, D and SD classes do not always represent the root class for a given WQS or GV. The root class for source water supply WQSs and GVs is A-classes, and therefore the standard is only applicable to A, A-Speical, AA, and AA-Special (see [Designated Best Uses and Standard Types). Inheritance through the hierarchy does not necessarily imply that all class have the same WQSs or GVs; in many instances, the WQSs or GVs become increasingly more restrictive moving downstream through the hierarchy. WQSs and GVs do not become less restrictive moving downstream through the hierarchy. This hierarchy provides a logical relationship between waterbody classes, but the hierarchy must be considered within the context of a waterbodies designated best use(s) for assessment purposes.
+
+
+### Designated Best Uses and Standard Types
+
+Waterbodies in NYS are assigned designated best use(s) (i.e., Fishing, Secondary Contact Recreation, Primary Contact Recreation, Source Water Supply, and Shellfishing) determined by the waterbody class. Fishing, Primary Contact Recreation, and Secoundary Contact Recreation uses are applicable to fresh and saline surface waters, while the Source Water Supply and Shellfishing uses are only applicable to fresh and saline surface waters, respectively. Figure \@ref(fig:wqs-general-use) overlays the class hierarchy depicted in Figure \@ref(fig:wqs-general) on the designated best uses the classes support. For example, all fresh surface water class support the Fishing use, while only A-classes support the Source Water Supply use (Figure \@ref(fig:wqs-general-use)A). Furthermore, A-classes support all fresh surface water uses (i.e., Fishing, Secondary Contact Recreation, Primary Contact Recreation, Source Water Supply), while class D only supports the fresh surface water Fishing use. [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) do not directly identify which designated best use(s) is supported by a given WQS or GV.
+
+```{r wqs-general-use, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="The designated waterbody uses and associated waterbody types of fresh (A) and saline surface waters (B) in New York State overlain with the water quality standards waterbody class hierarchy.The white-boxes represent the waterbody classes and the arrows indicate the direction that water quality standards are inherited through the class hierarchy. * Fresh surface water classes that have non-trout, trout (T), and trout spawning (TS) variants."}
+knitr::include_graphics('images/wqs_logic/wqs-logic_general-uses_v3.png',
+                        dpi = 300)
+```
+
+[Title 6 NYCRR, Part 702](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I06b83300b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) defines eight WQS/GV-types that provide an link between a WQS or GV and the best use the standard supports (Table \@ref(tab:use-type-table), Figure \@ref(fig:wqs-general-use)). Types are subsets of best uses, which identify the specific aspect of a use that is assessed by a given WQS or GV. In practice, the types specified in the WQS or GV tables in [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) must be utilized to cross-walked the WQSs and GVs in these tables to the best use(s) supported. For example, in [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) the WQSs for mercury differ between five types: 1) Health (Water Source), 2) Health (Fish Consumption), 3) Aquatic (Chronic), 4) Aquatic (Acute), and 5) Wildlife. Therefore, there are four standards for assessing the fishing use (i.e., Health (Fish Consumption), Aquatic (Chronic), Aquatic (Acute), and Wildlife types) and a single standard for assessing the source water supply use (i.e., Health (Water Source) type). The
+
+```{r use-type-table, echo=FALSE}
+data.frame(
+  Use = c(rep("Fishing", 5),
+          "Secondary Contact Recreation",
+          "Primary Contact Recreation",
+          rep("Source Water Supply", 2),
+          "Shellfishing"),
+  Type = c(
+           "Aquatic (Acute)",
+           "Aquatic (Chronic)",
+           "Health (Fish Consumption)",
+           "Wildlife",
+           "Aesthetic (Food Source)",
+           "Recreation",
+           "Recreation",
+           "Health (Water Source)",
+           "Aesthetic (Water Source)",
+           "Not Applicable"),
+  Source = c(
+    "Title 6 NYCRR, Part 702.9",
+    "Title 6 NYCRR, Part 702.9",
+    "Title 6 NYCRR, Part 702.8",
+    "Title 6 NYCRR, Part 702.13",
+    "Title 6 NYCRR, Part 702.14",
+    "Title 6 NYCRR, Part 702.12",
+    "Title 6 NYCRR, Part 702.12",
+    "Title 6 NYCRR, Part 702.2",
+    "Title 6 NYCRR, Part 702.14",
+    "Not Applicable"
+  )
+) %>% 
+  knitr::kable(caption = "Test")
+  # flextable::flextable() %>% 
+  # flextable::autofit() %>% 
+  # flextable::merge_v(j = c("Use")) %>% 
+  # flextable::color(~Type == "Not Applicable", color = "darkgray", j = "Type") %>% 
+  # flextable::italic(i = ~Type == "Not Applicable", j = "Type") %>% 
+  # flextable::theme_zebra() %>% 
+  # flextable::set_caption("Testing")
+```
+
+
+Many of the WQSs defined outside of [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) do not have defined WQS/GV-types, and therefore support all designated best uses associated with a given class. For example, the dissolved oxygen (DO) WQS defined in [Title 6 NYCRR, Part 703.3](https://govt.westlaw.com/nycrr/Document/I4ed90412cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)) has no defined type for fresh surface water classes. If DO is used to assess a class C waterbody, the assessment will only support the Fishing use. While, if DO is used to assess a class A waterbody, the assessment will support Fishing, Secondary Contact Recreation, Primary Contact Recreation, and Source Water Supply uses. DO was specifically selected becuase it exemplifies a WQS with an indirect relationship to the uses supported; Secondary Contact Recreation, Primary Contact Recreation, and Source Water Supply uses are not directly influenced by DO levels. The majority of WQS and GV are indirectly linked to a specific designated best use by the waterbody classes and WQS/GV-type assigned to the standard.
+
+Although most WQSs and GVs adhere to the logic represented in Figure \@ref(fig:wqs-general-uses), there are multiple discrepancies in [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf).
+
 
 ### Discrepancies
 
-The following WQS do not follow the logic depicted in Figure \@ref(fig:wqs-general). It is important to specifically document all discrepancies because these instances will require special attention within the standardized assessment automation process.
+The following WQS do not follow the logic depicted in Figure \@ref(fig:wqs-general-uses). It is important to specifically document all discrepancies because these instances will require special attention while developing an automated process to perform assessments.
 
 #### Class I
 
-In [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3. Water Classes and Type, WQSs for the saline surface water class I should be defined for types Human Consumption of Fish (H(FC)), Aquatic Chronic (A(C)), Aquatic Acute (A(A)), Wildlife Protection (W), and Aesthetic (E). However, in Table 1 of [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) and in [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Document/I4ed90418cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1), class I water's are frequently and inconsistently excluded from the above mentioned types; this creates a class hierarchy that follows the logic in Figure \@ref(fig:wqs-class-i) rather than the logic in Figure \@ref(fig:wqs-general).
-```{r wqs-class-i, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="In some instances New York State saline surface water standards exclude class I from the hierarchy of class."}
-knitr::include_graphics('images/wqs_logic/wqs-logic_class-i.png',
+In [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3. Water Classes and Type, WQSs for the saline surface water class I are associated with types Health (Consumption of Fish), Aquatic (Chronic), Aquatic (Acute), Wildlife Protection, and Aesthetic-- "Aesthetic" should most likely represent "Aesthetic (Food Source)" to align with the types defined in [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default))). However, in Table 1 of [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) and in [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Document/I4ed90418cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1), class I water's are frequently and inconsistently excluded from the above mentioned types. This creates a class hierarchy that follows the logic in Figure \@ref(fig:wqs-class-i) rather than the logic in Figure \@ref(fig:wqs-general).
+
+```{r wqs-class-i, fig.align='center', out.width = "500px", echo=FALSE, fig.cap="In some instances New York State saline surface water standards exclude class I from the hierarchy of class. The white-boxes represent the waterbody classes and the arrows indicate the direction that water quality standards are inherited through the class hierarchy. The red-box indicates that the waterbody class has been excluded from the hierarchy."}
+knitr::include_graphics('images/wqs_logic/wqs-logic_class-i_v2.png',
                         dpi = 300)
 ```
 
-The following parameters are not applicable to class I waters, which deviates from the logic presented in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3:
+```{r I-notes, include=FALSE}
+# The following parameters are not applicable to class I waters, which deviates from the logic presented in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3:
+# 
+# 1. Aldrin (309-00-2; Human Fish Consumption)
+# 2. Aldrin and Dieldrin (309-00-2; 60-57-1; Human Fish Consumption)
+# 3. Arsenic (NA; Aquatic Chronic)
+# 4. Boron (NA; Aquatic Chronic)
+# 
+# 6. Cyanide (NA; Aquatic Chronic)
+# 7. Hexavalent Chromium (NA; Aquatic Chronic)
+# 8. Demeton (8065-48-3; 298-03-3; 126-75-0; Aquatic Chronic)
+# 5. Endosulfan (115-29-7; Aquatic Chronic)
+# 6. Endrin (72-20-8; Human Fish Consumption)
+# 7. Hexachlorocyclopentadiene (77-47-4)
+# 8. Trichlorobenzenes (87-61-6, 120-82-1, 108-70-3, 12002-48-1)
+# 9. Azinphosmethyl (86-50-0)
+# 10. Demeton (8065-48-3, 298-03-3, 126-75-0)
+# 11. Hydrogen sulfide (7783-06-4)
+# 12. Malathion (121-75-5)
+# 13. Methoxychlor (72-43-5)
+# 14. Mirex (2385-85-5)
+# 15. Toxaphene (8001-35-2; A(C))
+# 
+# The following parameters are applicable to class I waters, which is consistent with the logic presented in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3:
+# 
+# 1. Acenaphthene (83-32-9; GV Aquatic Acute; GV Aquatic Chronic)
+# 1. Ammonia and Ammonium (7664-41-7)
+# 2. Benzene (71-43-2; Human Fish Consumption; GV Aquatic Acute; GV Aquatic Chronic)
+# 3. Benzo(a)pyrene (50-32-8; GV Human Fish Consumption)
+# 4. Cadmium (NA; Aquatic Chronic; GV Human Fish Consumption)
+# 5. Chlordane (57-74-9; Human Fish Consumption)
+# 6. Chlorinated dibenzo-p-dioxins and Chlorinated dibenzofurans (NA; Human Fish Consumption; Wildlife)
+# 7. Total Residual Chlorine (NA; Aquatic Chronic)
+# 8. Chlorobenzene (108-90-7; Aquatic Chronic; Human Fish Consumption)
+# 9. Copper (NA; Aquatic Acute; Aquatic Chronic)
+# 10. Cyanide (NA; Human Fish Consumption)
+# 11. p,p′-DDD (72-54-8; Human Fish Consumption; Wildlife)
+# 12. p,p′-DDE (72-55-9; Human Fish Consumption; Wildlife)
+# 13. p,p′-DDT (50-29-3; Human Fish Consumption; Wildlife)
+# 14. Dieldrin (60-57-1; Human Fish Consumption)
+# 15. 2,4-Dimethylphenol (105-67-9; Human fish Consumption)
+# 16. 2,4-Dinitrophenol (51-28-5; Human Fish Consumption)
+# 17. Ethylbenzene (100-41-4; GV Aquatic Acute, GV Aquatic Chronic)
+# 17. Heptachlor (76-44-8)
+# 18. Heptachlor expoxide (1024-57-3)
+# 19. Hexachlorobenzene (118-74-1)
+# 20. Hexachlorobutadiene (87-68-3)
+# 21. alpha-Hexachlorocyclohexane (319-84-6)
+# 22. beta-Hexachlorocyclohexane (319-85-7)
+# 23. delta-Hexachlorocyclohexane (319-86-8)
+# 24. epsilon-Hexachlorocyclohexane (6108-10-7)
+# 25. gamma-Hexachlorocyclohexane (58-89-9)
+# 26. Hexachloroethane (67-72-1)
+# 27. Lead (NA)
+# 28. Mercury (NA)
+# 29. Methylene chloride (75-09-2)
+# 30. Nickel (NA)
+# 31. Octachlorostyrene (29082-74-4)
+# 32. Polychlorinated biphenyls (NA)
+# 33. Toluene (108-88-3)
+# 34. Toxaphene (8001-35-2)
+# 35. Trichloroethene (79-01-6)
+# 36. Zinc (NA)
+# 37. pH
+# 38. total coliforms
+# 39. fecal coliforms
+# 
+# 
+# Additionally, the class I WQS for dissolved oxygen is "Shall not be less than 4.0 mg/L at any time", while the acute WQS for classes SD, SC, SB, and SA is "Shall not be less than 3.0 mg/L at any time." This deviates from the general logic presented in (Figure \@ref(fig:wqs-general)B), which places class I in between classes SC and SB in the saline surface water hierarchy.
+```
 
-1. Aldrin (309-00-2)
-2. Aldrin and Dieldrin (309-00-2; 60-57-1)
-3. Arsenic (NA)
-4. Hexavalent Chromium (NA)
-5. Endosulfan (115-29-7)
-6. Endrin (72-20-8)
-7. Hexachlorocyclopentadiene (77-47-4)
-8. Trichlorobenzenes (87-61-6, 120-82-1, 108-70-3, 12002-48-1)
-9. Azinphosmethyl (86-50-0)
-10. Demeton (8065-48-3, 298-03-3, 126-75-0)
-11. Hydrogen sulfide (7783-06-4)
-12. Malathion (121-75-5)
-13. Methoxychlor (72-43-5)
-14. Mirex (2385-85-5)
-15. Toxaphene (8001-35-2; A(C))
 
-The following parameters are applicable to class I waters, which is consistent with the logic presented in [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf) Part 1A-Section 3:
-
-1. Ammonia and Ammonium (7664-41-7)
-2. Benzene (71-43-2)
-3. Boron (NA)
-4. Cadmium (NA)
-5. Chlordane (57-74-9)
-6. dibenzofurans (NA)
-7. Total Residual Chlorine (NA)
-8. Chlorobenzene (108-90-7)
-9. Copper (NA)
-10. Cyanide (NA)
-11. p,p′-DDD (72-54-8)
-12. p,p′-DDE (72-55-9)
-13. p,p′-DDT (50-29-3)
-14. Dieldrin (60-57-1)
-15. 2,4-Dimethylphenol (105-67-9)
-16. 2,4-Dinitrophenol (51-28-5)
-17. Heptachlor (76-44-8)
-18. Heptachlor expoxide (1024-57-3)
-19. Hexachlorobenzene (118-74-1)
-20. Hexachlorobutadiene (87-68-3)
-21. alpha-Hexachlorocyclohexane (319-84-6)
-22. beta-Hexachlorocyclohexane (319-85-7)
-23. delta-Hexachlorocyclohexane (319-86-8)
-24. epsilon-Hexachlorocyclohexane (6108-10-7)
-25. gamma-Hexachlorocyclohexane (58-89-9)
-26. Hexachloroethane (67-72-1)
-27. Lead (NA)
-28. Mercury (NA)
-29. Methylene chloride (75-09-2)
-30. Nickel (NA)
-31. Octachlorostyrene (29082-74-4)
-32. Polychlorinated biphenyls (NA)
-33. Toluene (108-88-3)
-34. Toxaphene (8001-35-2)
-35. Trichloroethene (79-01-6)
-36. Zinc (NA)
-37. pH
-38. total coliforms
-39. fecal coliforms
-
-
-Additionally, the class I WQS for dissolved oxygen is "Shall not be less than 4.0 mg/L at any time", while the acute WQS for classes SD, SC, SB, and SA is "Shall not be less than 3.0 mg/L at any time." This deviates from the general logic presented in (Figure \@ref(fig:wqs-general)B), which places class I in between classes SC and SB in the saline surface water hierarchy.
 
 ####  Aquatic (Acute)
 
-Aquatic (Acute) designates a type of WQS. The class hierarchy associated with Aquatic (Acute) WQSs are treated inconsistently by NYSDEC. In many instances, the class hierarchy follows the rules depicted in Figure \@ref(fig:wqs-general), but there are multiple instances where Aquatic (Acute) WQSs are only applicable to fresh and saline surface water classes D and SD, respectively (Figure \@ref(fig:wqs-aa)).
+Aquatic (Acute) designates a type of WQS. The class hierarchy associated with Aquatic (Acute) WQSs are treated inconsistently in [Title 6 NYCRR, Part 703.5](https://govt.westlaw.com/nycrr/Document/I4ed90418cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1) and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf). In many instances, the class hierarchy follows the rules depicted in Figure \@ref(fig:wqs-general), but there are multiple instances where Aquatic (Acute) WQSs and GVs are only applicable to fresh and saline surface water classes D and SD, respectively (Figure \@ref(fig:wqs-aa)).
 
 ```{r wqs-aa, fig.align='center', echo=FALSE, out.width = "400px", fig.cap="Many water quality standards of type Aquatic (Acute) are only applicable for fresh and saline surface waters D and SD, respectively. Therefore, Aquatic (Acute) standards are not always inherited by the classes downstream of D and SD in their respective hierarchies. There is no standardized logic dictating when Aquatic (Acute) water quality standards are or are not inherited by their descendants."}
-knitr::include_graphics('images/wqs_logic/wqs-logic_aquatic_acute.png',
+knitr::include_graphics('images/wqs_logic/wqs-logic_aquatic_acute_v2.png',
                         dpi = 300)
 ```
 
@@ -123,6 +193,13 @@ file.path("C:",
   standard_dt()
 
 ```
+
+
+#### Chlorobenzene
+
+Chlorobenzene (108-90-7) 
+
+
 
 #### Trout and Trout Spawning Waters
 
@@ -155,5 +232,6 @@ knitr::include_graphics('images/wqs_logic/wqs-logic_total-coliforms.png',
 knitr::include_graphics('images/wqs_logic/wqs-logic_fecal-coliforms.png',
                         dpi = 300)
 ```
+
 
 
