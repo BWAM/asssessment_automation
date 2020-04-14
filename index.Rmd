@@ -10,8 +10,12 @@ biblio-style: apalike
 link-citations: yes
 ---
 
-```{r setup1, include=FALSE}
+```{r setup1, echo=FALSE}
 knitr::opts_chunk$set(fig.width = 8)
+```
+
+```{r, echo=FALSE, message=FALSE}
+library(tidyverse)
 ```
 
 ```{r standard-dt, echo=FALSE}
