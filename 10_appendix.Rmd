@@ -1,0 +1,138 @@
+---
+title: "Untitled"
+author: "Zachary M. Smith"
+date: "4/14/2020"
+output: html_document
+---
+
+# Appendix A
+
+Appendix A appends together sections of [6 CRR-NY Parts 701-703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I06666980b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) that are most applicable to the application of surface and saline surface water water quality standards (WQSs) and guidance values (GVs). The majority of this appendix represents the exact language, demarcated by the block quotes, from the section referenced. The text from each section may __NOT__ represent all of the text from the section because text was specifically extracted if it was deemed to be absolutely necessary to understand the relationship between WQSs/GVs, classes, types, and best usages.
+
+## Part 701 Classifications: Surface Waters and Groundwaters
+
+### Fresh Surface Water Classes
+
+#### Class D
+
+> The best usage of Class D waters is __fishing__. Due to such natural conditions as intermittency of flow, water conditions not conducive to propagation of game fishery, or stream bed conditions, the waters will not support fish propagation. These waters shall be suitable for fish, shellfish and wildlife survival. The water quality shall be suitable for primary and secondary contact recreation, although other factors may limit the use for these purposes. – [6 CRR-NY 701.9](https://govt.westlaw.com/nycrr/Document/I4ed819c4cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class C
+
+> The best usage of Class C waters is __fishing__. These waters shall be suitable for fish, shellfish and wildlife propagation and survival. The water quality shall be suitable for primary and secondary contact recreation, although other factors may limit the use for these purposes. - [6 CRR-NY 701.8](https://govt.westlaw.com/nycrr/Document/I4ed819c1cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class B
+
+> The best usages of Class B waters are __primary and secondary contact recreation and fishing__. These waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.7](https://govt.westlaw.com/nycrr/Document/I4ed819becd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default)&bhcp=1)
+
+#### Class A
+
+> (a) The best usages of Class A waters are: __a source of water supply for drinking, culinary or food processing purposes; primary and secondary contact recreation; and fishing.__ The waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.6](https://govt.westlaw.com/nycrr/Document/I4ed819bbcd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class A-Special
+
+> (a) The best usages of Class A-S waters are: __a source of water supply for drinking, culinary or food processing purposes; primary and secondary contact recreation; and fishing.__ The waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.4](https://govt.westlaw.com/nycrr/Document/I4ed819b5cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class AA
+
+> (a) The best usages of Class AA waters are: __a source of water supply for drinking, culinary or food processing purposes; primary and secondary contact recreation; and fishing.__ The waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.5](https://govt.westlaw.com/nycrr/Document/I4ed819b8cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class AA-Special
+
+> (a) The best usages of Class AA-S waters are: __a source of water supply for drinking, culinary or food processing purposes; primary and secondary contact recreation; and fishing.__ The waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.3](https://govt.westlaw.com/nycrr/Document/I4ed819b2cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class N
+
+> ~~(a) The best usages of Class N waters are __the enjoyment of water in its natural condition and, where compatible, as a source of water for drinking or culinary purposes, bathing, fishing, fish propagation, and recreation.__ The waters shall be suitable for shellfish and wildlife propagation and survival and fish survival.~~ - [6 CRR-NY 701.2](https://govt.westlaw.com/nycrr/Document/I4ed7f2bccd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### Saline Surface Water Classes
+
+#### Class SD
+
+>The best usage of Class SD waters is __fishing.__ These waters shall be suitable for fish, shellfish and wildlife survival. In addition, the water quality shall be suitable for primary and secondary contact recreation, although other factors may limit the use for these purposes. This classification may be given to those waters that, because of natural or man-made conditions, cannot meet the requirements for fish propagation. - [6 CRR-NY 701.14](https://govt.westlaw.com/nycrr/Document/I4ed840cecd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class SC
+
+> The best usage of Class SC waters is __fishing.__ These waters shall be suitable for fish, shellfish and wildlife propagation and survival. The water quality shall be suitable for primary and secondary contact recreation, although other factors may limit the use for these purposes. - [6 CRR-NY 701.12](https://govt.westlaw.com/nycrr/Document/I4ed840c8cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class I
+
+> The best usages of Class I waters are __secondary contact recreation and fishing.__ These waters shall be suitable for fish, shellfish, and wildlife propagation and survival. In addition, the water quality shall be suitable for primary contact recreation, although other factors may limit the use for this purpose. - [6 CRR-NY 701.13](https://govt.westlaw.com/nycrr/Document/I4ed840cbcd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class SB
+
+> The best usages of Class SB waters are __primary and secondary contact recreation and fishing.__ These waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.11](https://govt.westlaw.com/nycrr/Document/I4ed840c5cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+#### Class SA
+
+> The best usages of Class SA waters are __shellfishing for market purposes, primary and secondary contact recreation and fishing.__ These waters shall be suitable for fish, shellfish and wildlife propagation and survival. - [6 CRR-NY 701.10](https://govt.westlaw.com/nycrr/Document/I4ed840c2cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+## Part 702 Derivation and Use of Standards and Guidance Values
+
+### 702.1 Basis for derivation of water quality standards and guidance values
+
+> (a) __The control of taste-, color- and odor-producing, toxic and other deleterious substances is implemented through the use of standards and guidance values.__ Standards and guidance values for such substances shall be derived according to the procedures set forth in this Part.
+(b) The derivation of standards and guidance values will consider, to the extent possible, variations in natural or background conditions of waters, including but not limited to alkalinity, temperature, hardness and pH.
+(c) __Standards and guidance values shall be of the following Types to protect the best usages of the waters__ as described in Part 701 of this Title:
+(1) Health (Water Source) or H(WS);
+(2) Health (Fish Consumption) or H(FC);
+(3) Aquatic (Chronic) or A(C);
+(4) Aquatic (Acute) or A(A);
+(5) Wildlife or W;
+(6) Aesthetic (Water Source) or E(WS);
+(7) Aesthetic (Food Source) or E(FS); and
+(8) Recreation or R. - [6 CRR-NY 702.1](https://govt.westlaw.com/nycrr/Document/I4ed88ee6cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### 702.2 Standards and guidance values for protection of human health and sources of potable water supplies
+
+> (a) Standards and guidance values for protection of the best usage as a source of potable water supply shall protect human health and drinking water sources and are referred to as __Health (Water Source)__ values. - [6 CRR-NY 702.2](https://govt.westlaw.com/nycrr/Document/I4ed88ee9cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### 702.8 Procedures for deriving standards and guidance values for protection of human health from consumption of fish
+
+> Standards and guidance values for the protection of the best usage of fishing shall protect the health of human consumers of fish and, for Class SA waters, human consumers of shellfish from chemicals that may bioaccumulate and are referred to as __Health (Fish Consumption)__ values. - [6 CRR-NY 702.8](https://govt.westlaw.com/nycrr/Document/I4ed88efbcd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### 702.9 Standards and guidance values for protection of aquatic life
+
+> (a) Protection of the best usage of fishing shall include standards and guidance values for the protection of __aquatic life.__
+(b) Standards and guidance values for the protection of propagation of aquatic life are referred to as __Aquatic (Chronic)__ values.
+(c) Standards and guidance values for the protection of survival of aquatic life are referred to as __Aquatic (Acute)__ values.
+(d) Where the waters are to be suitable for fish, shellfish and wildlife propagation and survival, both __Aquatic (Chronic) and Aquatic (Acute)__ standards or guidance values shall apply.
+(e) Where the waters are to be suitable for fish, shellfish and wildlife survival, __Aquatic (Acute)__ standards and guidance values shall apply.
+
+### 702.12 Procedures for deriving standards and guidance values for protection of recreation
+
+> (a) Protection of the __best usage of recreation__ shall include standards and guidance values to protect the quality of the water for __primary and secondary contact recreation,__ including aesthetic conditions. Such values are referred to as __recreation__ values and derived based on an evaluation of reported levels of the pollutant (such as pathogens or pathogen indicators, nutrients or vegetation) that affect the quality of the water and its suitability for __primary and secondary contact recreation.__ - [6 CRR-NY 702.12](https://govt.westlaw.com/nycrr/Document/I4ed8b5f8cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### 702.13 Procedures for deriving standards and guidance values for protection of wildlife
+
+> (a) Protection of the __best usage of fishing__ shall include standards and guidance values for protection of the health of wildlife consumers of aquatic life and water. Such values are referred to as __Wildlife__ values. - [6 CRR-NY 702.13](https://govt.westlaw.com/nycrr/Document/I4ed8b5fbcd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### 702.14 Procedures for deriving standards and guidance values for protection of aesthetic quality
+
+> (a) Protection of the __best usage as a source of potable water supply__ shall include standards and guidance values to protect the aesthetic quality of the water, including but not limited to taste, odor, and discoloration, both as a source of potable water and for other human uses such as clothes washing and showering. Such values are referred to as __Aesthetic (Water Source)__ values and shall be derived based on an evaluation of reported levels of the substance that affect the aesthetic quality of the water. Values derived shall not exceed the value of a Specific MCL that is based on aesthetic considerations.
+(b) Protection of the __best usage of fishing__ shall include standards and guidance values to prevent tainting of aquatic food, including but not limited to taste, odor, and discoloration. Such values are referred to as __Aesthetic (Food Source)__ values and derived based on an evaluation of reported levels of the substance that affect the aesthetic quality of the fish flesh, aquatic life, wildlife, or livestock that are consumed by humans and that acquire such flavor, odor, or color because of habitation in, passage through, or ingestion of waters. - [6 CRR-NY 702.14](https://govt.westlaw.com/nycrr/Document/I4ed8b5fecd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+### 702.15 Derivation of guidance values
+
+> (a) For those substances that do not have an applicable __Health (Water Source)__ standard in section 703.5 of this Title and that the department determines may pose a threat to human health if discharged to the waters of the State, a guidance value may be derived and shall be the most stringent of the following:
+(1) the values derived by applying the procedures from sections 702.3 through 702.7 of this Part;
+(2) a “general organic guidance value” of 50 ug/L for an individual organic substance. This paragraph does not apply if adequate and sufficient data are available to justify values greater than 50 ug/L using procedures from both sections 702.4 and 702.5 of this Part. The general organic guidance value applies only to those substances specified by the department; or
+(3) a "specific organic mixture guidance value" of 100 ug/L for a commercially available mixture of individual organic substances. This paragraph does not apply if adequate and sufficient data are available to justify values greater than 100 ug/L using procedures from both sections 702.4 and 702.5 of this Part. The derivation of this value for any specified mixture does not preclude the existence or derivation of a Health (Water Source) standard or guidance value for any individual organic substance in the mixture. The specific organic mixture guidance value applies only to those mixtures specified by the department.
+(b) For those substances that do not have an applicable Health (Fish Consumption) standard in section 703.5 of this Title and that the department determines may pose a threat to human health if discharged to the waters of the State, a guidance value may be derived by applying the procedures from section 702.8 of this Part.
+(c)
+(1) For those substances that do not have an applicable __Aquatic (Chronic)__ standard in section 703.5 of this Title and that the department determines may pose a threat to aquatic life or the environment if discharged to the waters of the State, a guidance value may be derived by applying the appropriate procedure from section 702.9 of this Part.
+(2) For those substances that have an identified applicable __Aquatic (Chronic)__ standard in section 703.5 of this Title, a guidance value shall be substituted where the procedures in section 702.9 of this Part yield a more stringent value. Remarks in Table 1 of section 703.5(f) of this Title identify the standards to which this paragraph applies. This paragraph applies only to the waters of the Great Lakes System.
+(d)
+(1) For those substances that do not have an applicable __Aquatic (Acute)__ standard in section 703.5 of this Title and that the department determines may pose a threat to aquatic life or the environment if discharged to the waters of the State, a guidance value may be derived by applying the appropriate procedure from section 702.9 of this Part.
+(2) For those substances that have an identified applicable __Aquatic (Acute)__ standard in section 703.5 of this Title, a guidance value shall be substituted where the procedures in section 702.9 of this Part yield a more stringent value. Remarks in Table 1 of section 703.5(f) of this Title identify the standards to which this paragraph applies. This paragraph applies only to the waters of the Great Lakes System.
+(e) For those substances that do not have an applicable __Wildlife__ standard in section 703.5 of this Title and that the department determines may pose a threat to wildlife if discharged to the waters of the State, a guidance value may be derived by applying the appropriate procedure from section 702.13 of this Part.
+(f) For those substances that do not have an applicable __Aesthetic (Water Source)__ standard in section 703.5 of this Title and that the department determines may pose a threat to the aesthetic quality of sources of potable water if discharged to the waters of the State, a guidance value may be derived by applying the appropriate procedure from section 702.14 of this Part.
+(g) For those substances that do not have an applicable __Aesthetic (Food Source)__ standard in section 703.5 of this Title and that the department determines may pose a threat to the aesthetic quality of food for human consumption if discharged to the waters of the State, a guidance value may be derived by applying the appropriate procedure from section 702.14 of this Part.
+(h) For those parameters that do not have an applicable __Recreation__ standard in section 703.5 of this Title and that the department determines may pose a threat to the quality of the water for recreation if discharged to the waters of the State, a guidance value may be derived by applying the appropriate procedure from section 702.12 of this Part. - [6 CRR-NY 702.15](https://govt.westlaw.com/nycrr/Document/I4ed8b601cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
+
+
+## Part 703 Surface Water and Groundwater Quality Standards and Groundwater Effluent Limitations
+
+### 703.5 Water quality standards for taste-, color- and odor-producing, toxic and other deleterious substances
+
+> (b) Standards are __Health (Water Source), Health (Fish Consumption), Aquatic (Chronic), Aquatic (Acute), Wildlife, Aesthetic (Water Source), Aesthetic (Food Source), or Recreation__ based and are respectively designated as H(WS), H(FC), A(C), A(A), W, E(WS), E(FS), or R in the column headed “Type.” __Where more than one Type of standard is listed for a water class, the most stringent applies.__ - [6 CRR-NY 703.5](https://govt.westlaw.com/nycrr/Document/I4ed90418cd1711dda432a117e6e0f345?viewType=FullText&originationContext=documenttoc&transitionType=CategoryPageItem&contextData=(sc.Default))
