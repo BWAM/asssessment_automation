@@ -12,7 +12,7 @@ theme: readable
 
 # Water Quality Standards and Guidance Values
 
-NYS's water quality standards (WQSs) and guidance values (GVs) are defined in [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf), respectively. WQSs and GVs are assigned to fresh and saline surface water classes, and ultimately determine if a waterbody is attaining its designated uses (i.e., fishing, secondary contact recreation, primary contact recreation, source water supply, and shellfishing). In general, the relationship between waterbody classes is hierarchical.
+Water quality standards (WQSs) and guidance values (GVs) are narrative or numeric criteria for determining the condition of a waterbody. New York State’s (NYS’s) WQSs and GVs are defined in [Title 6 NYCRR, Part 703](https://govt.westlaw.com/nycrr/Browse/Home/NewYork/NewYorkCodesRulesandRegulations?guid=I070d30d0b5a111dda0a4e17826ebc834&originationContext=documenttoc&transitionType=Default&contextData=(sc.Default)) and [TOGS 1.1.1](https://www.dec.ny.gov/docs/water_pdf/togs111.pdf), respectively. WQSs and GVs are applicable to three water types: 1) fresh surface water, 2) saline surface water, and 3) groundwater. This chapter will focus on the relationship among WQSs/GVs, WQS/GV-type best usages, and waterbody class used to assess fresh and saline surface waters in NYS.
 
 ## Waterbody Class Hierarchy
 
