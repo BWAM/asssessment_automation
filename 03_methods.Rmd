@@ -124,52 +124,48 @@ assessed.df <- chem_final.df %>%
                 lab_anl_method_name,
                 cas_rn,
                 parameter) %>%
-  mutate(
-    within_period = assessment_period(.df = .,
-                      .date_col = date,
-                    .n_years_ago = 10),
-    min_years_samples = all(assessment_min_years(.df = .,
-                                                .date_col = date,
-                                                .min_years = 2,
-                                                assessment_id),
-                           assessment_min_counts(.df = ., 
-                                                 .min_samples = 8,
-                                                 assessment_id)),
-    attaining_wqs = wqs_attaining(result_numeric,
-                                  direction,
-                                  threshold,
-                                  na.rm = TRUE),
-    attaining_75 = wqs_attaining(result_numeric,
-                                 direction,
-                                 threshold,
-                                 na.rm = TRUE),
-    min_violations_year = TRUE,
-    tmdl = !is.na(tmdl_id),
-    ltco_rest_plan = mgmtstat %in% "Strategy Implementation Scheduled or Underway",
-    pollutant = TRUE 
-    )
+  mutate(within_period  = assessment_period(.date_vec = date,
+                                            .n_years_ago = 10),
+         attaining_wqs = wqs_attaining(result_numeric,
+                                       direction,
+                                       threshold,
+                                       na.rm = TRUE),
+         attaining_75 = wqs_attaining(result_numeric,
+                                      direction,
+                                      threshold,
+                                      na.rm = TRUE)) %>% 
+  group_by(assessment_id, within_period) %>% 
+  summarize(
+    wqs_violation = any(attaining_wqs == FALSE),
+    wqs_75_violation = any(attaining_75 == FALSE),
+    min_years_samples = length(unique(year)) >= 2 & length(assessment_id) >= 8,
+    min_violations_year = sum(tapply(attaining_wqs == FALSE, year, sum) > 0),
+    tmdl = FALSE,
+    ltco_rest_plan = FALSE,
+    pollutant = FALSE 
+  )
+
 ```
-
-
 
 ```{r}
 test.df <- assessed.df %>% 
   mutate(
     assessment = case_when(
       !within_period ~ "Manual Review Required: Manual Review Required: Manual Review Required",
-      !min_years_samples & attaining_wqs ~ "IR3: Impaired: Unconfirmed",
-      !min_years_samples & !attaining_wqs & attaining_75  ~ "IR3: Fully Supported: Unconfirmed",
-      !min_years_samples & !attaining_wqs & !attaining_75  ~ "IR3: Stressed: Unconfirmed",
-      min_years_samples & attaining_wqs & attaining_75  ~ "IR1: Fully Supported: Confirmed",
-      min_years_samples & attaining_wqs & !attaining_75  ~ "IR1: Stressed: Confirmed",
-      min_years_samples & !attaining_wqs & !min_violations_year  ~ "IR3: Impaired: Unconfirmed",
-      min_years_samples & !attaining_wqs & min_violations_year & tmdl  ~ "IR4a: Impaired: Confirmed",
-      min_years_samples & !attaining_wqs &
-          min_violations_year & !tmdl & ltco_rest_plan  ~ "IR4b: Impaired: Unconfirmed",
-      min_years_samples & !attaining_wqs &
-          min_violations_year & !tmdl & !ltco_rest_plan & pollutant  ~ "IR4c: Impaired: Confirmed",
-      min_years_samples & !attaining_wqs &
-          min_violations_year & !tmdl & !ltco_rest_plan & !pollutant  ~ "IR5: Impaired: Confirmed",
+      !min_years_samples & wqs_violation ~ "IR3: Impaired: Unconfirmed",
+      !min_years_samples & !wqs_violation & wqs_75_violation  ~ "IR3: Fully Supported: Unconfirmed",
+      !min_years_samples & !wqs_violation & !wqs_75_violation  ~ "IR3: Stressed: Unconfirmed",
+      min_years_samples & wqs_violation & wqs_75_violation  ~ "IR1: Fully Supported: Confirmed",
+      min_years_samples & wqs_violation & !wqs_75_violation  ~ "IR1: Stressed: Confirmed",
+      min_years_samples & !wqs_violation & !min_violations_year  ~ "IR3: Impaired: Unconfirmed",
+      min_years_samples & !wqs_violation & 
+        min_violations_year & tmdl  ~ "IR4a: Impaired: Confirmed",
+      min_years_samples & !wqs_violation &
+        min_violations_year & !tmdl & ltco_rest_plan  ~ "IR4b: Impaired: Unconfirmed",
+      min_years_samples & !wqs_violation &
+        min_violations_year & !tmdl & !ltco_rest_plan & pollutant  ~ "IR4c: Impaired: Confirmed",
+      min_years_samples & !wqs_violation &
+        min_violations_year & !tmdl & !ltco_rest_plan & !pollutant  ~ "IR5: Impaired: Confirmed",
       TRUE ~ "ERROR"
     )
   )
